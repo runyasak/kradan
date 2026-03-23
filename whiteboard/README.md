@@ -6,25 +6,32 @@ Live code broadcasting tool for presentations and training sessions, built with 
 
 | Layer      | Tech                          |
 |------------|-------------------------------|
-| Runtime    | Bun                           |
-| Frontend   | Vue 3 + Vite + UnoCSS         |
+| Packages   | pnpm                          |
+| Server runtime | Bun                       |
+| Frontend   | Vue 3 + Vite 8 + UnoCSS       |
 | Backend    | Elysia (WebSocket + REST)     |
 | Highlights | Shiki                         |
 | Linting    | Oxlint                        |
 
+## Requirements
+
+- **pnpm** — package manager
+- **Bun** — server runtime (Elysia requires Bun)
+- **Node.js 20.19+ or 22.12+** — required by Vite 8
+
 ## Getting started
 
 ```bash
-bun install
+pnpm install
 
 # Terminal 1 – backend (watches current dir)
-bun run dev:server
+pnpm dev:server
 
 # Terminal 2 – frontend dev server
-bun run dev:client
+pnpm dev:client
 
 # Or both at once (bash/zsh)
-bun run dev
+pnpm dev
 ```
 
 Open http://localhost:5173
@@ -43,12 +50,12 @@ bun run server/index.js --port=3001 --dir=/path/to/watch
 ## Build
 
 ```bash
-bun run build       # outputs to dist/
-bun run preview     # serve the built frontend
+pnpm build      # outputs to dist/
+pnpm preview    # serve the built frontend
 ```
 
 ## Lint
 
 ```bash
-bun run lint        # oxlint
+pnpm lint       # oxlint
 ```
